@@ -6,87 +6,110 @@ namespace _23_11_2023_Ex02
     {
         static void Main(string[] args)
         {
-            int voto= -1;
-            int totalVotoCand01 = 0;
-            int totalVotoCand02 = 0;
-            int totalVotoCand03 = 0;
-            int totalVotoCand04 = 0;
-            int totalVotoBranco = 0;
-            int totalVotoNulo = 0;
-            int totalVotos = 0;
-
-            while (voto != 0)  
+            try
             {
-                Console.Clear();
-                Console.WriteLine("*****Opcões*****");
-                Console.WriteLine("-----------------");
-                Console.WriteLine("Candidato 01: ");
-                Console.WriteLine("Candidato 02: ");
-                Console.WriteLine("Candidato 03: ");
-                Console.WriteLine("Candidato 04: ");
-                Console.WriteLine("Voto Nulo: ");
-                Console.WriteLine("Voto Branco: ");
-                Console.WriteLine("-----------------");
-                Console.Write("Informe o seu voto: ");
-                voto = int.Parse(Console.ReadLine());
 
-                //if (voto == 1)
-                    //Console.WriteLine("Você votou no 1° candidato ");
-                //else if (voto == 2)
-                    //Console.WriteLine("Você votou no 2° candidato ");
-                //else if (voto == 3)
-                    //Console.WriteLine("Você votou no 3° candidato ");
-                //else if (voto == 4)
-                   // Console.WriteLine("Você votou no 4° candidato ");
-                //else if (voto == 5)
-                   // Console.WriteLine("VOTO NULO");
-                //else if (voto == 6)
-                   // Console.WriteLine("VOTO EM BRANCO");//
+                int voto = -1;
+                int totalVotoCand01 = 0;
+                int totalVotoCand02 = 0;
+                int totalVotoCand03 = 0;
+                int totalVotoCand04 = 0;
+                int totalVotoBranco = 0;
+                int totalVotoNulo = 0;
+                int totalVotos = 0;
 
-                switch (voto)
+                while (voto != 0)
                 {
-                    case 1:
-                        totalVotoCand01 += 1;
-                        break;
-                    case 2:
-                        totalVotoCand02 += 1;
-                        break;
-                    case 3:
-                        totalVotoCand03 += 1;
-                        break;
-                    case 4:
-                        totalVotoCand04 += 1;
-                        break;
-                    case 5:
-                        totalVotoNulo += 1;
-                        break;
-                    case 6:
-                        totalVotoBranco += 1;
-                        break;
-                    default:
-                     if (voto != 0)
-                        {
-                            Console.WriteLine("VOTO NÃO COMPUTADO ");
-                            Console.ReadLine();
-                        }
-                        break;
-                }
-            }
-                    totalVotos = totalVotoCand01 + totalVotoCand02 + totalVotoCand03 + totalVotoCand04 + totalVotoNulo + totalVotoBranco;
+                    Console.Clear();
+                    Console.WriteLine("*****Opcões*****");
+                    Console.WriteLine("-----------------");
+                    Console.WriteLine("Candidato 01: ");
+                    Console.WriteLine("Candidato 02: ");
+                    Console.WriteLine("Candidato 03: ");
+                    Console.WriteLine("Candidato 04: ");
+                    Console.WriteLine("Voto Nulo: ");
+                    Console.WriteLine("Voto Branco: ");
+                    Console.WriteLine("-----------------");
+                    Console.Write("Informe o seu voto: ");
+                    voto = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine("**********Apuração**********");
-                    Console.WriteLine("****************************");
-                    Console.WriteLine($"Total de votos Candidato 01: {totalVotoCand01}");
-                    Console.WriteLine($"Total de votos Candidato 02: {totalVotoCand02}");
-                    Console.WriteLine($"Total de votos Candidato 03: {totalVotoCand03}");
-                    Console.WriteLine($"Total de votos Candidato 04: {totalVotoCand04}");
-                    Console.WriteLine($"Total votos Nulos: {totalVotoNulo}");
-                    Console.WriteLine($"Total votos Brancos: {totalVotoBranco}");
-                    Console.WriteLine($"% de Nulos: {(totalVotoNulo / totalVotos) * 100}");
-                    Console.WriteLine($"% de Brancos: {(totalVotoBranco / totalVotos) * 100}");
+                    //if (voto == 1)
+                    //Console.WriteLine("Você votou no 1° candidato ");
+                    //else if (voto == 2)
+                    //Console.WriteLine("Você votou no 2° candidato ");
+                    //else if (voto == 3)
+                    //Console.WriteLine("Você votou no 3° candidato ");
+                    //else if (voto == 4)
+                    // Console.WriteLine("Você votou no 4° candidato ");
+                    //else if (voto == 5)
+                    // Console.WriteLine("VOTO NULO");
+                    //else if (voto == 6)
+                    // Console.WriteLine("VOTO EM BRANCO");//
+
+                    switch (voto)
+                    {
+                        case 1:
+                            totalVotoCand01 += 1;
+                            break;
+                        case 2:
+                            totalVotoCand02 += 1;
+                            break;
+                        case 3:
+                            totalVotoCand03 += 1;
+                            break;
+                        case 4:
+                            totalVotoCand04 += 1;
+                            break;
+                        case 5:
+                            totalVotoNulo += 1;
+                            break;
+                        case 6:
+                            totalVotoBranco += 1;
+                            break;
+                        default:
+                            if (voto != 0)
+                            {
+                                Console.WriteLine("VOTO NÃO COMPUTADO ");
+                                Console.ReadLine();
+                            }
+                            break;
+                    }
+                }
+                totalVotos = totalVotoCand01 + totalVotoCand02 + totalVotoCand03 + totalVotoCand04 + totalVotoNulo + totalVotoBranco;
+
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine("**********Apuração**********");
+                Console.WriteLine("****************************");
+                Console.WriteLine($"Total de votos Candidato 01: {totalVotoCand01}");
+                Console.WriteLine($"Total de votos Candidato 02: {totalVotoCand02}");
+                Console.WriteLine($"Total de votos Candidato 03: {totalVotoCand03}");
+                Console.WriteLine($"Total de votos Candidato 04: {totalVotoCand04}");
+                Console.WriteLine($"Total votos Nulos: {totalVotoNulo}");
+                Console.WriteLine($"Total votos Brancos: {totalVotoBranco}");
+                Console.WriteLine($"% de Nulos: {((Convert.ToDecimal(totalVotoNulo) / Convert.ToDecimal(totalVotos)) * 100):0.00}");
+                Console.WriteLine($"% de Brancos: {((Convert.ToDecimal(totalVotoBranco) / Convert.ToDecimal(totalVotos)) * 100):0.00}");
+
+                decimal totalVotoNulosDecimal = Convert.ToDecimal(totalVotoNulo);
+                decimal totalVotoBrancoDecimal = Convert.ToDecimal(totalVotos);
+                decimal totalVotoDecimal = Convert.ToDecimal(totalVotos);
+
+                decimal percVotoNulos = (totalVotoNulosDecimal / totalVotoDecimal) * 100;
+                decimal percVotoBrancos = (totalVotoBrancoDecimal / totalVotoDecimal) * 100;
+
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"% de Nulos: {percVotoNulos:0.00}");
+                Console.WriteLine($"% de Brancos: {percVotoBrancos:0.00}");
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write($"Ocorreu o seguinte problema: {ex.Message}");
+                Console.Write("");
+                throw;
+            } 
 
         }
     }
